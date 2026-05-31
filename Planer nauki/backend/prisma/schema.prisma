@@ -1,0 +1,16 @@
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model StudySession {
+  id         String   @id @default(uuid())
+  title      String
+  duration   Int
+  difficulty String
+  createdAt  DateTime @default(now())
+}
